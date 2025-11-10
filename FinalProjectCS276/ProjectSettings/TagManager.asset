@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Card1
   - CardSquare
+  - Card2
+  - CardCircle
+  - Card3
   layers:
   - Default
   - TransparentFX
