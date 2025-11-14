@@ -22,10 +22,12 @@ public class Card_Backside : MonoBehaviour
 
     public List<GameObject> cardFrontList;
     public List<GameObject> cardList;
+    public List<GameObject> awakeList;
+    public List<GameObject> asleepList;
     public List<string> cardFrontTagList;
-    public static int clicks = 0;
-    public bool match = false;
-        
+
+    public bool deactivate = false;
+    public bool activate = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -50,96 +52,141 @@ public class Card_Backside : MonoBehaviour
     void Update()
     {
         
-    }
-
-    void Randomize()
-    {
         
     }
 
+    void ChangeState(int cardNum, GameObject clickedCard)
+    {
+        if (deactivate == true)
+        {
+            clickedCard.SetActive(false);    // hides card 1 backside
+            deactivate = false;
+        }
+
+        if (activate == true)
+        {
+            cardFrontList[cardNum].SetActive(true);
+            activate = false;
+        }
+    }
 
     void OnMouseDown()
     {
         string cardTag = gameObject.tag;
+        GameObject clickedCard = gameObject;
 
         if (cardTag == "Card1") // checks if card 1 clicked first
         {
             int cardNum = 0;
-            MakeMatch(cardNum);
+            MakeMatch(cardNum, clickedCard);
         }
 
-        if (cardTag == "Card2")
+        else if (cardTag == "Card2")
         {
             int cardNum = 1;
-            MakeMatch(cardNum);
+            MakeMatch(cardNum, clickedCard);
         }
 
-        if (cardTag == "Card3")
+        else if (cardTag == "Card3")
         {
             int cardNum = 2;
-            MakeMatch(cardNum);
+            MakeMatch(cardNum, clickedCard);
         }
 
-        if (cardTag == "Card4")
+        else if (cardTag == "Card4")
         {
             int cardNum = 3;
-            MakeMatch(cardNum);
+            MakeMatch(cardNum, clickedCard);
         }
-        if (cardTag == "Card5")
+
+        else if (cardTag == "Card5")
         {
             int cardNum = 4;
-            MakeMatch(cardNum);
+            MakeMatch(cardNum, clickedCard);
         }
-        if (cardTag == "Card6")
+
+        else if (cardTag == "Card6")
         {
             int cardNum = 5;
-            MakeMatch(cardNum);
+            MakeMatch(cardNum, clickedCard);
         }
-        if (cardTag == "Card7")
+
+        else if (cardTag == "Card7")
         {
             int cardNum = 6;
-            MakeMatch(cardNum);
+            MakeMatch(cardNum, clickedCard);
         }
-        if (cardTag == "Card8")
+
+        else if (cardTag == "Card8")
         {
             int cardNum = 7;
-            MakeMatch(cardNum);
+            MakeMatch(cardNum, clickedCard);
         }
-        if (cardTag == "Card9")
+
+        else if (cardTag == "Card9")
         {
             int cardNum = 8;
-            MakeMatch(cardNum);
+            MakeMatch(cardNum, clickedCard);
         }
-        if (cardTag == "Card10")
+
+        else if (cardTag == "Card10")
         {
             int cardNum = 9;
-            MakeMatch(cardNum);
+            MakeMatch(cardNum, clickedCard);
         }
 
     }
     
-    void MakeMatch(int cardNum)
+
+    void MakeMatch(int cardNum, GameObject clickedCard)
     {
-        clicks++;
-        Debug.Log(clicks);
-        gameObject.SetActive(false);    // hides card 1 backside
-        if (clicks % 2 == 0)    // checks if 2 cards clicked
+        
+        if (clickedCard.activeSelf)
         {
-            string frontCardTag = cardFrontTagList[cardNum]; // name of front card type
+            deactivate = true;
+            asleepList.Add(clickedCard);
+            ChangeState(cardNum, clickedCard);
+        }
 
-            GameObject[] frontCardMatches = GameObject.FindGameObjectsWithTag(frontCardTag);    // list of cards with clicked on type
+        if (!cardFrontList[cardNum].activeSelf)
+        {
+            activate = true;
+            awakeList.Add(cardFrontList[cardNum]);
+            ChangeState(cardNum, clickedCard);
+        }
+        
 
-            foreach (GameObject card in frontCardMatches)
+
+        // add game object to 'asleep' list & front card to 'awake' list
+        
+        Debug.Log(asleepList);
+
+        if (asleepList.Count == 2 && awakeList.Count == 2)    // checks if 2 cards clicked
+        {
+            // get tag of awakelist[0] and compare to awakelist[1]
+            if (awakeList[0].tag == awakeList[1].tag)
             {
-                if (card.activeSelf)    // if card is flipped
-                {
-                    match = true;
-                    clicks = 0;
-                    card.SetActive(false);
+                Destroy(awakeList[0]);
+                Destroy(awakeList[1]);
+                Destroy(asleepList[0]);
+                Destroy(asleepList[1]);
 
-                    Destroy(card);  // delete front of card prefab
-                    Destroy(gameObject);    // delete backside of card clicked on
-                }
+                asleepList.RemoveAt(0);
+                asleepList.RemoveAt(1);
+                awakeList.RemoveAt(0);
+                awakeList.RemoveAt(1);
+            }
+            else
+            {
+                awakeList[0].SetActive(false);
+                awakeList[1].SetActive(false);
+                asleepList[0].SetActive(true);
+                asleepList[1].SetActive(true);
+
+                asleepList.RemoveAt(0);
+                asleepList.RemoveAt(1);
+                awakeList.RemoveAt(0);
+                awakeList.RemoveAt(1);
             }
         }
     }

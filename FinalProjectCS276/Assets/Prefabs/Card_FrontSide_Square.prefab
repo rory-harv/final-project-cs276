@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8848881513150877622
 Transform:
   m_ObjectHideFlags: 0
@@ -133,7 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52684325002ab54eaddd1f38d4ff355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FrontSide_SquarePrefab: {fileID: 0}
   Card1_Prefab: {fileID: 0}
   Card2_Prefab: {fileID: 0}
   Card3_Prefab: {fileID: 0}
@@ -151,7 +150,11 @@ MonoBehaviour:
   Polygon_Prefab: {fileID: 0}
   cardFrontList: []
   cardList: []
-  clicks: 0
+  awakeList: []
+  asleepList: []
+  cardFrontTagList: []
+  deactivate: 0
+  activate: 0
 --- !u!1 &1948091833842315179
 GameObject:
   m_ObjectHideFlags: 0
