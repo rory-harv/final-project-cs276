@@ -461,6 +461,8 @@ MonoBehaviour:
   awakeList: []
   asleepList: []
   cardFrontTagList: []
+  deactivate: 0
+  activate: 0
 --- !u!1 &7335315377977989787
 GameObject:
   m_ObjectHideFlags: 0

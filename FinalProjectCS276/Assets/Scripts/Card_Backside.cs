@@ -28,6 +28,8 @@ public class Card_Backside : MonoBehaviour
 
     public bool deactivate = false;
     public bool activate = false;
+
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -59,13 +61,13 @@ public class Card_Backside : MonoBehaviour
     {
         if (deactivate == true)
         {
-            clickedCard.SetActive(false);    // hides card 1 backside
+            clickedCard.GetComponent<SpriteRenderer>().enabled = false;    // hides card 1 backside
             deactivate = false;
         }
 
         if (activate == true)
         {
-            cardFrontList[cardNum].SetActive(true);
+            cardFrontList[cardNum].GetComponent<SpriteRenderer>().enabled = true;
             activate = false;
         }
     }
@@ -141,21 +143,19 @@ public class Card_Backside : MonoBehaviour
     void MakeMatch(int cardNum, GameObject clickedCard)
     {
         
-        if (clickedCard.activeSelf)
+        if (clickedCard.GetComponent<SpriteRenderer>().enabled == true)
         {
             deactivate = true;
             asleepList.Add(clickedCard);
             ChangeState(cardNum, clickedCard);
         }
 
-        if (!cardFrontList[cardNum].activeSelf)
+        if (cardFrontList[cardNum].GetComponent<SpriteRenderer>().enabled == false)
         {
             activate = true;
             awakeList.Add(cardFrontList[cardNum]);
             ChangeState(cardNum, clickedCard);
         }
-        
-
 
         // add game object to 'asleep' list & front card to 'awake' list
         
@@ -164,12 +164,12 @@ public class Card_Backside : MonoBehaviour
         if (asleepList.Count == 2 && awakeList.Count == 2)    // checks if 2 cards clicked
         {
             // get tag of awakelist[0] and compare to awakelist[1]
-            if (awakeList[0].tag == awakeList[1].tag)
+            if (awakeList[0].tag == awakeList[1].tag && awakeList[0] != awakeList[1])
             {
-                Destroy(awakeList[0]);
-                Destroy(awakeList[1]);
-                Destroy(asleepList[0]);
-                Destroy(asleepList[1]);
+                awakeList[0].SetActive(false);
+                awakeList[1].SetActive(false);
+                asleepList[0].SetActive(false);
+                asleepList[1].SetActive(false);
 
                 asleepList.RemoveAt(0);
                 asleepList.RemoveAt(1);
@@ -178,10 +178,10 @@ public class Card_Backside : MonoBehaviour
             }
             else
             {
-                awakeList[0].SetActive(false);
-                awakeList[1].SetActive(false);
-                asleepList[0].SetActive(true);
-                asleepList[1].SetActive(true);
+                awakeList[0].GetComponent<SpriteRenderer>().enabled = false;
+                awakeList[1].GetComponent<SpriteRenderer>().enabled = false;
+                asleepList[0].GetComponent<SpriteRenderer>().enabled = true;
+                asleepList[1].GetComponent<SpriteRenderer>().enabled = true;
 
                 asleepList.RemoveAt(0);
                 asleepList.RemoveAt(1);
