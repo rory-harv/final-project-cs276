@@ -1,8 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UIElements;
 
 public class Card_Backside : MonoBehaviour
 {
+    public UIDocument uiDocument;
+
     public GameObject Card1_Prefab;
     public GameObject Card2_Prefab;
     public GameObject Card3_Prefab;
@@ -98,8 +101,21 @@ public class Card_Backside : MonoBehaviour
     
     void FlipCard(GameObject cardClicked)
     {
+        int index = 0;
+        for (int i = 0; i < cardList.Count; i++)
+        {
+            if (cardClicked == cardList[i])
+            {
+                index = i;
+            }
+        }
+
+        GameObject frontCard = cardFrontList[index];
+
         cardClicked.GetComponent<SpriteRenderer>().enabled = false;	// disabled cardback
-        
+
+        frontCard.GetComponent<SpriteRenderer>().enabled = true;	// enable cardfront
+
         clicks ++;
     }
 
