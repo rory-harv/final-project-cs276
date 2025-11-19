@@ -14,11 +14,16 @@ public class Card_Backside : MonoBehaviour
     public GameObject Card9_Prefab;
     public GameObject Card10_Prefab;
 
-    public GameObject Square_Prefab;
-    public GameObject Circle_Prefab;
-    public GameObject Triangle_Prefab;
-    public GameObject Oval_Prefab;
-    public GameObject Polygon_Prefab;
+    public GameObject Card1_Front;
+    public GameObject Card2_Front;
+    public GameObject Card3_Front;
+    public GameObject Card4_Front;
+    public GameObject Card5_Front;
+    public GameObject Card6_Front;
+    public GameObject Card7_Front;
+    public GameObject Card8_Front;
+    public GameObject Card9_Front;
+    public GameObject Card10_Front;
 
     public List<GameObject> cardFrontList;
     public List<GameObject> cardList;
@@ -26,28 +31,34 @@ public class Card_Backside : MonoBehaviour
     public List<GameObject> asleepList;
     public List<string> cardFrontTagList;
 
-    public bool deactivate = false;
-    public bool activate = false;
+    public int turns = 6;
+    public int clicks = 0;
+    public Dictionary<GameObject, string> awakeDict = new Dictionary<GameObject, string>();
+
+    public GameObject cardClicked;   // card back clicked on
+	public string cardClickedTag;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
         cardList = new List<GameObject> {Card1_Prefab, Card2_Prefab, Card3_Prefab, Card4_Prefab, Card5_Prefab, Card6_Prefab, Card7_Prefab, Card8_Prefab, Card9_Prefab, Card10_Prefab};
 
-        cardFrontList = new List<GameObject> {Square_Prefab, Square_Prefab, Circle_Prefab, Triangle_Prefab, Oval_Prefab, Circle_Prefab, Polygon_Prefab, Oval_Prefab, Triangle_Prefab, Polygon_Prefab};
+        cardFrontList = new List<GameObject> {Card1_Front, Card2_Front, Card3_Front, Card4_Front, Card5_Front, Card6_Front, Card7_Front, Card8_Front, Card9_Front, Card10_Front};
 
-        cardFrontTagList = new List<string> {"CardSquare", "CardSquare", "CardCircle", "CardTriangle", "CardOval", "CardCircle", "CardPolygon", "CardOval", "CardTriangle", "CardPolygon"};
+        awakeDict = new Dictionary<GameObject, string>();
 
         foreach (GameObject card in cardList)
         {
-            card.SetActive(true);
+            card.GetComponent<SpriteRenderer>().enabled = true; 
         }
 
         foreach (GameObject card in cardFrontList)
         {
-            card.SetActive(false);
+            card.GetComponent<SpriteRenderer>().enabled = false; 
         }
+
     }
 
     // Update is called once per frame
@@ -57,138 +68,92 @@ public class Card_Backside : MonoBehaviour
         
     }
 
-    void ChangeState(int cardNum, GameObject clickedCard)
-    {
-        if (deactivate == true)
-        {
-            clickedCard.GetComponent<SpriteRenderer>().enabled = false;    // hides card 1 backside
-            deactivate = false;
-        }
-
-        if (activate == true)
-        {
-            cardFrontList[cardNum].GetComponent<SpriteRenderer>().enabled = true;
-            activate = false;
-        }
-    }
-
     void OnMouseDown()
     {
-        string cardTag = gameObject.tag;
-        GameObject clickedCard = gameObject;
-
-        if (cardTag == "Card1") // checks if card 1 clicked first
+        cardClicked = gameObject;   // card back clicked on
+	    cardClickedTag = gameObject.tag;
+	
+	    if (turns > 0)  // if player still has turns left
         {
-            int cardNum = 0;
-            MakeMatch(cardNum, clickedCard);
+            if (clicks < 2) // checks if two cards have been clicked
+            {
+                if (cardClicked.GetComponent<SpriteRenderer>().enabled = true)	// if cardback enabled
+                {
+                    AddToAwake(cardClicked, cardClickedTag);    // adds clicked card to the awake list
+                    FlipCard(cardClicked);  // flips card from back to front side showing
+                }
+            }
+
+            else 
+            {
+                CheckMatch();   // checks if 2 cards clicked are a match
+            }	
         }
 
-        else if (cardTag == "Card2")
+        else 
         {
-            int cardNum = 1;
-            MakeMatch(cardNum, clickedCard);
+            EndGame();  // ends games if out of turns
         }
-
-        else if (cardTag == "Card3")
-        {
-            int cardNum = 2;
-            MakeMatch(cardNum, clickedCard);
-        }
-
-        else if (cardTag == "Card4")
-        {
-            int cardNum = 3;
-            MakeMatch(cardNum, clickedCard);
-        }
-
-        else if (cardTag == "Card5")
-        {
-            int cardNum = 4;
-            MakeMatch(cardNum, clickedCard);
-        }
-
-        else if (cardTag == "Card6")
-        {
-            int cardNum = 5;
-            MakeMatch(cardNum, clickedCard);
-        }
-
-        else if (cardTag == "Card7")
-        {
-            int cardNum = 6;
-            MakeMatch(cardNum, clickedCard);
-        }
-
-        else if (cardTag == "Card8")
-        {
-            int cardNum = 7;
-            MakeMatch(cardNum, clickedCard);
-        }
-
-        else if (cardTag == "Card9")
-        {
-            int cardNum = 8;
-            MakeMatch(cardNum, clickedCard);
-        }
-
-        else if (cardTag == "Card10")
-        {
-            int cardNum = 9;
-            MakeMatch(cardNum, clickedCard);
-        }
-
     }
     
-
-    void MakeMatch(int cardNum, GameObject clickedCard)
+    void FlipCard(GameObject cardClicked)
     {
+        cardClicked.GetComponent<SpriteRenderer>().enabled = false;	// disabled cardback
         
-        if (clickedCard.GetComponent<SpriteRenderer>().enabled == true)
-        {
-            deactivate = true;
-            asleepList.Add(clickedCard);
-            ChangeState(cardNum, clickedCard);
-        }
+        clicks ++;
+    }
 
-        if (cardFrontList[cardNum].GetComponent<SpriteRenderer>().enabled == false)
-        {
-            activate = true;
-            awakeList.Add(cardFrontList[cardNum]);
-            ChangeState(cardNum, clickedCard);
-        }
+    void AddToAwake(GameObject cardClicked, string cardClickedTag)
+    {
+        awakeDict[cardClicked] = cardClickedTag; // adds cardclicked to awakedict
+    }
 
-        // add game object to 'asleep' list & front card to 'awake' list
-        
-        Debug.Log(asleepList);
-
-        if (asleepList.Count == 2 && awakeList.Count == 2)    // checks if 2 cards clicked
+    void CheckMatch() 	// make separate file
+    {
+        if (awakeDict.Count == 2)
         {
-            // get tag of awakelist[0] and compare to awakelist[1]
-            if (awakeList[0].tag == awakeList[1].tag && awakeList[0] != awakeList[1])
+            List<GameObject> keysList = new List<GameObject>(awakeDict.Keys);
+
+            if (keysList[0] == keysList[1])
             {
-                awakeList[0].SetActive(false);
-                awakeList[1].SetActive(false);
-                asleepList[0].SetActive(false);
-                asleepList[1].SetActive(false);
-
-                asleepList.RemoveAt(0);
-                asleepList.RemoveAt(1);
-                awakeList.RemoveAt(0);
-                awakeList.RemoveAt(1);
+                MakeMatch(awakeDict);
             }
+
             else
             {
-                awakeList[0].GetComponent<SpriteRenderer>().enabled = false;
-                awakeList[1].GetComponent<SpriteRenderer>().enabled = false;
-                asleepList[0].GetComponent<SpriteRenderer>().enabled = true;
-                asleepList[1].GetComponent<SpriteRenderer>().enabled = true;
-
-                asleepList.RemoveAt(0);
-                asleepList.RemoveAt(1);
-                awakeList.RemoveAt(0);
-                awakeList.RemoveAt(1);
+                turns--;
+                clicks = 0;
+                Update();
             }
         }
     }
+
+    void MakeMatch(Dictionary<GameObject, string> awakeDict)
+    {
+        List<GameObject> keysList = new List<GameObject>(awakeDict.Keys);
+
+        GameObject Card1 = keysList[0];	// declare cards as objects
+        GameObject Card2 = keysList[1];
+        
+        string cardtag = awakeDict[Card1];
+
+        awakeDict.Remove(Card1);
+        awakeDict.Remove(Card2); 	// remove cards from awake
+        
+        turns--;
+        clicks = 0;
+
+        Card1.GetComponent<SpriteRenderer>().enabled = false;	
+        Card2.GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    void EndGame()
+    {
+        turns = 0;
+        clicks = 2;
+        //Display restart
+    }
+
+
 
 }

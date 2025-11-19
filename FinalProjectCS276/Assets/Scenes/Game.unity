@@ -176,18 +176,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &195462925
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -373,18 +380,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &200738241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -570,18 +584,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &244281698
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -767,18 +788,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &355431992
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1086,18 +1114,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &418032998
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1283,18 +1318,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &441276986
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1689,18 +1731,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &708469379
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1886,18 +1935,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &821778879
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2098,18 +2154,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &1065154232
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2295,18 +2358,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &1076751136
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2492,18 +2562,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &1081986472
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2744,18 +2821,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &1285112031
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2927,18 +3011,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &1364256109
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3266,18 +3357,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &1564116349
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3408,18 +3506,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &1565151020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3590,18 +3695,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &1676742530
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3802,18 +3914,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &1677001063
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4086,18 +4205,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &1774819574
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4283,18 +4409,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &1882583054
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4521,18 +4654,25 @@ MonoBehaviour:
   Card8_Prefab: {fileID: 1081986469}
   Card9_Prefab: {fileID: 1677001060}
   Card10_Prefab: {fileID: 1774819571}
-  Square_Prefab: {fileID: 0}
-  Circle_Prefab: {fileID: 0}
-  Triangle_Prefab: {fileID: 0}
-  Oval_Prefab: {fileID: 0}
-  Polygon_Prefab: {fileID: 0}
+  Card1_Front: {fileID: 1676742528}
+  Card2_Front: {fileID: 1962480623}
+  Card3_Front: {fileID: 355431989}
+  Card4_Front: {fileID: 1564116345}
+  Card5_Front: {fileID: 1565151017}
+  Card6_Front: {fileID: 195462922}
+  Card7_Front: {fileID: 1285112027}
+  Card8_Front: {fileID: 1364256106}
+  Card9_Front: {fileID: 821778877}
+  Card10_Front: {fileID: 708469377}
   cardFrontList: []
   cardList: []
   awakeList: []
   asleepList: []
   cardFrontTagList: []
-  deactivate: 0
-  activate: 0
+  turns: 6
+  clicks: 0
+  cardClicked: {fileID: 0}
+  cardClickedTag: 
 --- !u!61 &1962480626
 BoxCollider2D:
   m_ObjectHideFlags: 0
