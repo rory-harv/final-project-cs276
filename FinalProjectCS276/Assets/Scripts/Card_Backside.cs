@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+
 public class Card_Backside : MonoBehaviour
 {
     public UIDocument uiDocument;
@@ -27,13 +29,17 @@ public class Card_Backside : MonoBehaviour
     public GameObject Card9_Front;
     public GameObject Card10_Front;
 
+    private Label turnsText;
+
+    private Label matchText;
+
     private List<GameObject> cardFrontList;
     private List<GameObject> cardList;
     
     private GameObject? activeCard1;
     private GameObject? activeCard2;
 
-    private int turns = 6;
+    private static int turns = 6;
     
     private Dictionary<GameObject, string> awakeDict = new Dictionary<GameObject, string>();
 
@@ -44,6 +50,10 @@ public class Card_Backside : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+        turnsText = uiDocument.rootVisualElement.Q<Label>("TurnsLabel");
+        matchText = uiDocument.rootVisualElement.Q<Label>("MatchLabel");
+        matchText.style.display = DisplayStyle.None;
 
         cardList = new List<GameObject> {Card1_Prefab, Card2_Prefab, Card3_Prefab, Card4_Prefab, Card5_Prefab, Card6_Prefab, Card7_Prefab, Card8_Prefab, Card9_Prefab, Card10_Prefab};
 
@@ -61,6 +71,8 @@ public class Card_Backside : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        turnsText.text = "Turns Left: " + turns;
+
         if (Input.GetMouseButtonDown(0))
         {
                 // Create a ray from the camera through the mouse position
@@ -95,11 +107,6 @@ public class Card_Backside : MonoBehaviour
                     FlipCard2(cardClicked);
                     CheckMatch();
                 }
-                // if (cardClicked.GetComponent<SpriteRenderer>().enabled = true)	// if cardback enabled
-                // {
-                //     AddToAwake(cardClicked, cardClickedTag);    // adds clicked card to the awake list
-                //     FlipCard(cardClicked, activeCard1);  // flips card from back to front side showing
-                // }
 
             }
 	
@@ -148,6 +155,7 @@ public class Card_Backside : MonoBehaviour
 
     void CheckMatch() 	// make separate file
     {
+        turns--;
         if (activeCard1 != null && activeCard2 != null)
         {
             if (activeCard1.tag == activeCard2.tag)
@@ -155,46 +163,78 @@ public class Card_Backside : MonoBehaviour
                 MakeMatch(activeCard1, activeCard2);
             }
 
-            else
+            else if (activeCard1.tag != activeCard2.tag)
             {
-                turns--;
-                activeCard1 = null;
-                activeCard2 = null;
+                BreakMatch(activeCard1, activeCard2);
             }
         }
     }
 
-    void MakeMatch(GameObject activeCard1, GameObject activeCard2)
+    void MakeMatch(GameObject activeCard1, GameObject activeCard2)  // deletes cards if match
     {
-        //List<GameObject> keysList = new List<GameObject>(awakeDict.Keys);
+        ShowText();
+        Invoke("HideText", 2f);
 
-        // GameObject Card1 = keysList[0];	// declare cards as objects
-        // GameObject Card2 = keysList[1];
-        
-        // string cardtag = awakeDict[Card1];
-
-        // awakeDict.Remove(Card1);
-        // awakeDict.Remove(Card2); 	// remove cards from awake
-        
-        turns--;
-        //clicks = 0;
-
-        activeCard1.GetComponent<SpriteRenderer>().enabled = false;	
+        activeCard1.GetComponent<SpriteRenderer>().enabled = false;	    // disables front cards after match complete
         activeCard2.GetComponent<SpriteRenderer>().enabled = false;
 
-        activeCard1 = null;
+        activeCard1 = null;     // resets active cards
         activeCard2 = null;
 
-
     }
+
+    public void ShowText()
+    {
+        matchText.style.display = DisplayStyle.Flex;
+    }
+
+    public void HideText()
+    {
+        matchText.style.display = DisplayStyle.None;
+    }
+
+    void BreakMatch(GameObject activeCard1, GameObject activeCard2)     // resets cards if not a match
+    {
+
+        int index1 = 0; // finds backside of first card
+        for (int i = 0; i < cardList.Count; i++)
+        {
+            if (activeCard1 == cardFrontList[i])
+            {
+                index1 = i;
+            }
+        }
+
+        int index2 = 0; // finds backside of second card
+        for (int j = 0; j < cardList.Count; j++)
+        {
+            if (activeCard2 == cardFrontList[j])
+            {
+                index2 = j;
+            }
+        }
+
+        cardList[index1].GetComponent<SpriteRenderer>().enabled = true;	    // re-enables backcard of first
+        cardList[index1].GetComponent<BoxCollider2D>().enabled = true;
+
+        cardList[index2].GetComponent<SpriteRenderer>().enabled = true;     // re-enables backcard of second
+        cardList[index2].GetComponent<BoxCollider2D>().enabled = true;
+
+        activeCard1 = null;     // resets active cards
+        activeCard2 = null;
+    }
+
+
 
     void EndGame()
     {
         turns = 0;
-        //clicks = 2;
         //Display restart
     }
 
-
+    void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
 }
