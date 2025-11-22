@@ -32,6 +32,7 @@ public class Card_Backside : MonoBehaviour
     private Label turnsText;
 
     private Label matchText;
+    private Button restartButton;
 
     private List<GameObject> cardFrontList;
     private List<GameObject> cardList;
@@ -39,7 +40,7 @@ public class Card_Backside : MonoBehaviour
     private GameObject? activeCard1;
     private GameObject? activeCard2;
 
-    private static int turns = 6;
+    private static int turns;
     
     private Dictionary<GameObject, string> awakeDict = new Dictionary<GameObject, string>();
 
@@ -50,10 +51,13 @@ public class Card_Backside : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        turns = 6;
 
         turnsText = uiDocument.rootVisualElement.Q<Label>("TurnsLabel");
         matchText = uiDocument.rootVisualElement.Q<Label>("MatchLabel");
         matchText.style.display = DisplayStyle.None;
+        restartButton = uiDocument.rootVisualElement.Q<Button>("RestartButton");
+        restartButton.style.display = DisplayStyle.None;
 
         cardList = new List<GameObject> {Card1_Prefab, Card2_Prefab, Card3_Prefab, Card4_Prefab, Card5_Prefab, Card6_Prefab, Card7_Prefab, Card8_Prefab, Card9_Prefab, Card10_Prefab};
 
@@ -156,6 +160,11 @@ public class Card_Backside : MonoBehaviour
     void CheckMatch() 	// make separate file
     {
         turns--;
+        if (turns == 0)
+        {
+            EndGame();
+        }
+        
         if (activeCard1 != null && activeCard2 != null)
         {
             if (activeCard1.tag == activeCard2.tag)
@@ -229,7 +238,8 @@ public class Card_Backside : MonoBehaviour
     void EndGame()
     {
         turns = 0;
-        //Display restart
+        restartButton.style.display = DisplayStyle.Flex;
+        restartButton.clicked += ReloadScene;
     }
 
     void ReloadScene()
