@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Card_Backside : MonoBehaviour
 {
@@ -67,7 +68,7 @@ public class Card_Backside : MonoBehaviour
 
         foreach (GameObject card in cardFrontList)
         {
-            card.GetComponent<SpriteRenderer>().enabled = true; 
+            card.GetComponent<SpriteRenderer>().enabled = true;     // sets all card fronts active
         }
 
     }
@@ -75,18 +76,17 @@ public class Card_Backside : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        turnsText.text = "Turns Left: " + turns;
+        turnsText.text = "Turns Left: " + turns;    // updates turns text
 
         if (Input.GetMouseButtonDown(0))
         {
-                // Create a ray from the camera through the mouse position
-                Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); // checks mouse position
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
-                if (hit.collider != null)
-                {
-                    MouseClick(hit.collider.gameObject);
-                }
+            if (hit.collider != null)   // checks if a card is clicked on
+            {
+                MouseClick(hit.collider.gameObject);
+            }
 
         }
         
@@ -103,17 +103,15 @@ public class Card_Backside : MonoBehaviour
             {
                 if (activeCard1 == null)
                 {
-                    FlipCard1(cardClicked);
+                    FlipCard1(cardClicked);     // flips over first card
                 }
 
                 else if (activeCard2 == null)
                 {
-                    FlipCard2(cardClicked);
-                    CheckMatch();
+                    FlipCard2(cardClicked);     // flips over second card
+                    CheckMatch();   // checks to see if both cards a match
                 }
-
             }
-	
         }
 
         else 
@@ -133,7 +131,7 @@ public class Card_Backside : MonoBehaviour
             }
         }
 
-        activeCard1 = cardFrontList[index];
+        activeCard1 = cardFrontList[index];     // sets active front card
 
         cardClicked.GetComponent<SpriteRenderer>().enabled = false;	// disabled cardback
         cardClicked.GetComponent<BoxCollider2D>().enabled = false;
@@ -150,39 +148,41 @@ public class Card_Backside : MonoBehaviour
             }
         }
 
-        activeCard2 = cardFrontList[index];
+        activeCard2 = cardFrontList[index];     // sets active front card 
 
         cardClicked.GetComponent<SpriteRenderer>().enabled = false;	// disabled cardback
         cardClicked.GetComponent<BoxCollider2D>().enabled = false;
+
     }
 
 
     void CheckMatch() 	// make separate file
     {
         turns--;
-        if (turns == 0)
+        if (turns == 0)     // checks end condition after updating turns
         {
             EndGame();
         }
         
-        if (activeCard1 != null && activeCard2 != null)
+        if (activeCard1 != null && activeCard2 != null)     // if 2 active cards
         {
-            if (activeCard1.tag == activeCard2.tag)
+            if (activeCard1.tag == activeCard2.tag)     // if cards a match
             {
-                MakeMatch(activeCard1, activeCard2);
+                StartCoroutine(MakeMatch(activeCard1, activeCard2, 1f));
             }
 
-            else if (activeCard1.tag != activeCard2.tag)
+            else if (activeCard1.tag != activeCard2.tag)    // if cards are not a match
             {
                 BreakMatch(activeCard1, activeCard2);
             }
         }
     }
 
-    void MakeMatch(GameObject activeCard1, GameObject activeCard2)  // deletes cards if match
+    private IEnumerator MakeMatch(GameObject activeCard1, GameObject activeCard2, float delay)  // deletes cards if match
     {
-        ShowText();
-        Invoke("HideText", 2f);
+        ShowMatchText();
+        yield return new WaitForSeconds(delay); // pauses match on screen
+        Invoke("HideMatchText", 1f);    // hides match text
 
         activeCard1.GetComponent<SpriteRenderer>().enabled = false;	    // disables front cards after match complete
         activeCard2.GetComponent<SpriteRenderer>().enabled = false;
@@ -192,14 +192,14 @@ public class Card_Backside : MonoBehaviour
 
     }
 
-    public void ShowText()
+    public void ShowMatchText()
     {
-        matchText.style.display = DisplayStyle.Flex;
+        matchText.style.display = DisplayStyle.Flex;    // displays match text
     }
 
-    public void HideText()
+    public void HideMatchText()
     {
-        matchText.style.display = DisplayStyle.None;
+        matchText.style.display = DisplayStyle.None;    // hides match text
     }
 
     void BreakMatch(GameObject activeCard1, GameObject activeCard2)     // resets cards if not a match
@@ -224,27 +224,29 @@ public class Card_Backside : MonoBehaviour
         }
 
         cardList[index1].GetComponent<SpriteRenderer>().enabled = true;	    // re-enables backcard of first
-        cardList[index1].GetComponent<BoxCollider2D>().enabled = true;
-
         cardList[index2].GetComponent<SpriteRenderer>().enabled = true;     // re-enables backcard of second
+
+        cardList[index1].GetComponent<BoxCollider2D>().enabled = true;
         cardList[index2].GetComponent<BoxCollider2D>().enabled = true;
+        
 
         activeCard1 = null;     // resets active cards
         activeCard2 = null;
+
     }
 
 
 
     void EndGame()
     {
-        turns = 0;
-        restartButton.style.display = DisplayStyle.Flex;
+        turns = 0;  // satisfies end condition
+        restartButton.style.display = DisplayStyle.Flex;    // displays restart button
         restartButton.clicked += ReloadScene;
     }
 
     void ReloadScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);     // reloads scene to begin from the start
     }
 
 }
