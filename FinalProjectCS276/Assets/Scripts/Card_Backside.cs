@@ -132,6 +132,7 @@ public class Card_Backside : MonoBehaviour
         }
 
         activeCard1 = cardFrontList[index];     // sets active front card
+        activeCard1.GetComponent<SpriteRenderer>().enabled = true;  // ensure front card is visible
 
         cardClicked.GetComponent<SpriteRenderer>().enabled = false;	// disabled cardback
         cardClicked.GetComponent<BoxCollider2D>().enabled = false;
@@ -149,6 +150,7 @@ public class Card_Backside : MonoBehaviour
         }
 
         activeCard2 = cardFrontList[index];     // sets active front card 
+        activeCard2.GetComponent<SpriteRenderer>().enabled = true;  // ensure front card is visible
 
         cardClicked.GetComponent<SpriteRenderer>().enabled = false;	// disabled cardback
         cardClicked.GetComponent<BoxCollider2D>().enabled = false;
@@ -173,21 +175,21 @@ public class Card_Backside : MonoBehaviour
 
             else if (activeCard1.tag != activeCard2.tag)    // if cards are not a match
             {
-                BreakMatch(activeCard1, activeCard2);
+                StartCoroutine(BreakMatchCoroutine(1f));  // delay before flipping back
             }
         }
     }
 
-    private IEnumerator MakeMatch(GameObject activeCard1, GameObject activeCard2, float delay)  // deletes cards if match
+    private IEnumerator MakeMatch(GameObject card1, GameObject card2, float delay)  // deletes cards if match
     {
         ShowMatchText();
         yield return new WaitForSeconds(delay); // pauses match on screen
         Invoke("HideMatchText", 1f);    // hides match text
 
-        activeCard1.GetComponent<SpriteRenderer>().enabled = false;	    // disables front cards after match complete
-        activeCard2.GetComponent<SpriteRenderer>().enabled = false;
+        card1.GetComponent<SpriteRenderer>().enabled = false;	    // disables front cards after match complete
+        card2.GetComponent<SpriteRenderer>().enabled = false;
 
-        activeCard1 = null;     // resets active cards
+        activeCard1 = null;     // resets active cards (using class fields)
         activeCard2 = null;
 
     }
@@ -202,8 +204,11 @@ public class Card_Backside : MonoBehaviour
         matchText.style.display = DisplayStyle.None;    // hides match text
     }
 
-    void BreakMatch(GameObject activeCard1, GameObject activeCard2)     // resets cards if not a match
+    private IEnumerator BreakMatchCoroutine(float delay)     // resets cards if not a match
     {
+        yield return new WaitForSeconds(delay); // wait so player can see both cards
+        
+        if (activeCard1 == null || activeCard2 == null) yield break; // safety check
 
         int index1 = 0; // finds backside of first card
         for (int i = 0; i < cardList.Count; i++)
@@ -223,14 +228,19 @@ public class Card_Backside : MonoBehaviour
             }
         }
 
+        // Disable front card sprites first
+        activeCard1.GetComponent<SpriteRenderer>().enabled = false;
+        activeCard2.GetComponent<SpriteRenderer>().enabled = false;
+
+        // Re-enable backside cards
         cardList[index1].GetComponent<SpriteRenderer>().enabled = true;	    // re-enables backcard of first
         cardList[index2].GetComponent<SpriteRenderer>().enabled = true;     // re-enables backcard of second
 
         cardList[index1].GetComponent<BoxCollider2D>().enabled = true;
         cardList[index2].GetComponent<BoxCollider2D>().enabled = true;
         
-
-        activeCard1 = null;     // resets active cards
+        // Reset active cards
+        activeCard1 = null;
         activeCard2 = null;
 
     }
