@@ -200,16 +200,16 @@ public class Card_Backside : MonoBehaviour
         }
     }
 
-    private IEnumerator MakeMatch(GameObject activeCard1, GameObject activeCard2, float delay)  // deletes cards if match
+    private IEnumerator MakeMatch(GameObject card1, GameObject card2, float delay)  // deletes cards if match
     {
         ShowMatchText();
         yield return new WaitForSeconds(delay); // pauses match on screen
         Invoke("HideMatchText", 1f);    // hides match text
 
-        activeCard1.GetComponent<SpriteRenderer>().enabled = false;	    // disables front cards after match complete
-        activeCard2.GetComponent<SpriteRenderer>().enabled = false;
+        card1.GetComponent<SpriteRenderer>().enabled = false;	    // disables front cards after match complete
+        card2.GetComponent<SpriteRenderer>().enabled = false;
 
-        activeCard1 = null;     // resets active cards
+        activeCard1 = null;     // resets active cards (using class fields)
         activeCard2 = null;
 
     }
@@ -264,6 +264,11 @@ public class Card_Backside : MonoBehaviour
         activeCard1.GetComponent<SpriteRenderer>().enabled = false;
         activeCard2.GetComponent<SpriteRenderer>().enabled = false;
 
+        // Disable front card sprites first
+        activeCard1.GetComponent<SpriteRenderer>().enabled = false;
+        activeCard2.GetComponent<SpriteRenderer>().enabled = false;
+
+        // Re-enable backside cards
         cardList[index1].GetComponent<SpriteRenderer>().enabled = true;	    // re-enables backcard of first
         cardList[index2].GetComponent<SpriteRenderer>().enabled = true;     // re-enables backcard of second
 
