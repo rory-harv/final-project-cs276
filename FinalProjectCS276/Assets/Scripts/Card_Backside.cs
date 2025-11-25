@@ -33,6 +33,7 @@ public class Card_Backside : MonoBehaviour
     private Label turnsText;
 
     private Label matchText;
+    private Label nonMatchText;
     private Button restartButton;
 
     private List<GameObject> cardFrontList;
@@ -48,6 +49,8 @@ public class Card_Backside : MonoBehaviour
     private GameObject cardClicked;   // card back clicked on
 	private string cardClickedTag;
 
+    private bool completed = false;
+
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -56,7 +59,9 @@ public class Card_Backside : MonoBehaviour
 
         turnsText = uiDocument.rootVisualElement.Q<Label>("TurnsLabel");
         matchText = uiDocument.rootVisualElement.Q<Label>("MatchLabel");
+        nonMatchText = uiDocument.rootVisualElement.Q<Label>("NonMatchLabel");
         matchText.style.display = DisplayStyle.None;
+        nonMatchText.style.display = DisplayStyle.None;
         restartButton = uiDocument.rootVisualElement.Q<Button>("RestartButton");
         restartButton.style.display = DisplayStyle.None;
 
@@ -97,7 +102,7 @@ public class Card_Backside : MonoBehaviour
         cardClicked = gameObject;   // card back clicked on
 	    cardClickedTag = gameObject.tag;
 	
-	    if (turns > 0)  // if player still has turns left
+	    if (turns > 0 && completed == false)  // if player still has turns left or has not finished the matches
         {
             if (activeCard1 == null || activeCard2 == null) // checks if two cards have been clicked
             {
@@ -132,6 +137,7 @@ public class Card_Backside : MonoBehaviour
         }
 
         activeCard1 = cardFrontList[index];     // sets active front card
+        activeCard1.GetComponent<SpriteRenderer>().enabled = true;  // ensure front card is visible
 
         cardClicked.GetComponent<SpriteRenderer>().enabled = false;	// disabled cardback
         cardClicked.GetComponent<BoxCollider2D>().enabled = false;
@@ -149,17 +155,33 @@ public class Card_Backside : MonoBehaviour
         }
 
         activeCard2 = cardFrontList[index];     // sets active front card 
+        activeCard2.GetComponent<SpriteRenderer>().enabled = true;  // ensure front card is visible
 
         cardClicked.GetComponent<SpriteRenderer>().enabled = false;	// disabled cardback
         cardClicked.GetComponent<BoxCollider2D>().enabled = false;
-
     }
 
 
     void CheckMatch() 	// make separate file
     {
         turns--;
-        if (turns == 0)     // checks end condition after updating turns
+
+        foreach (GameObject card in cardList)   // loops through cards
+        {
+            bool enabled = card.GetComponent<SpriteRenderer>().enabled;     // bool if there exists an active card
+            if (enabled == true)    // if there is a card active
+            {
+                completed = false;  // continue game
+                break;  // break loop
+            }
+            else
+            {
+                completed = true;   // all cards disabled & game completed
+            }
+        }
+
+
+        if (turns == 0 || completed == true)     // checks end condition after updating turns & completed variable
         {
             EndGame();
         }
@@ -173,7 +195,7 @@ public class Card_Backside : MonoBehaviour
 
             else if (activeCard1.tag != activeCard2.tag)    // if cards are not a match
             {
-                BreakMatch(activeCard1, activeCard2);
+                StartCoroutine(BreakMatchCoroutine(1f));  // delay before flipping back
             }
         }
     }
@@ -192,6 +214,7 @@ public class Card_Backside : MonoBehaviour
 
     }
 
+
     public void ShowMatchText()
     {
         matchText.style.display = DisplayStyle.Flex;    // displays match text
@@ -202,8 +225,22 @@ public class Card_Backside : MonoBehaviour
         matchText.style.display = DisplayStyle.None;    // hides match text
     }
 
-    void BreakMatch(GameObject activeCard1, GameObject activeCard2)     // resets cards if not a match
+    public void ShowNonMatchText()
     {
+        nonMatchText.style.display = DisplayStyle.Flex;    // displays nonmatch text
+    }
+    public void HideNonMatchText()
+    {
+        nonMatchText.style.display = DisplayStyle.None;    // hides nonmatch text
+    }
+
+    private IEnumerator BreakMatchCoroutine(float delay)     // resets cards if not a match
+    {
+        ShowNonMatchText();
+        yield return new WaitForSeconds(delay); // wait so player can see both cards
+        Invoke("HideNonMatchText", 1f);    // hides nonmatch text
+        
+        if (activeCard1 == null || activeCard2 == null) yield break; // safety check
 
         int index1 = 0; // finds backside of first card
         for (int i = 0; i < cardList.Count; i++)
@@ -222,6 +259,10 @@ public class Card_Backside : MonoBehaviour
                 index2 = j;
             }
         }
+        
+        // Disable front card sprites first
+        activeCard1.GetComponent<SpriteRenderer>().enabled = false;
+        activeCard2.GetComponent<SpriteRenderer>().enabled = false;
 
         cardList[index1].GetComponent<SpriteRenderer>().enabled = true;	    // re-enables backcard of first
         cardList[index2].GetComponent<SpriteRenderer>().enabled = true;     // re-enables backcard of second
@@ -229,8 +270,7 @@ public class Card_Backside : MonoBehaviour
         cardList[index1].GetComponent<BoxCollider2D>().enabled = true;
         cardList[index2].GetComponent<BoxCollider2D>().enabled = true;
         
-
-        activeCard1 = null;     // resets active cards
+        activeCard1 = null;
         activeCard2 = null;
 
     }
