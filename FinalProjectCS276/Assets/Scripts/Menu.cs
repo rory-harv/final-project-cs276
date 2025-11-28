@@ -23,7 +23,7 @@ public class Menu : MonoBehaviour
         level1Button.clicked += Level1Scene;
     }
 
-    void Level1Scene()
+    public void Level1Scene()
     {
         SceneManager.LoadScene("Game");
     }

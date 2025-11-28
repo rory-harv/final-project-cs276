@@ -43,8 +43,6 @@ public class Card_Backside : MonoBehaviour
     private GameObject? activeCard2;
 
     private static int turns;
-    
-    private Dictionary<GameObject, string> awakeDict = new Dictionary<GameObject, string>();
 
     private GameObject cardClicked;   // card back clicked on
 	private string cardClickedTag;
@@ -69,12 +67,12 @@ public class Card_Backside : MonoBehaviour
 
         cardFrontList = new List<GameObject> {Card1_Front, Card2_Front, Card3_Front, Card4_Front, Card5_Front, Card6_Front, Card7_Front, Card8_Front, Card9_Front, Card10_Front};
 
-        awakeDict = new Dictionary<GameObject, string>();
-
         foreach (GameObject card in cardFrontList)
         {
             card.GetComponent<SpriteRenderer>().enabled = true;     // sets all card fronts active
         }
+
+        Debug.Log("Started");
 
     }
 
