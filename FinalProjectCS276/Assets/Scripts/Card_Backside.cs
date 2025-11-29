@@ -72,8 +72,6 @@ public class Card_Backside : MonoBehaviour
             card.GetComponent<SpriteRenderer>().enabled = true;     // sets all card fronts active
         }
 
-        Debug.Log("Started");
-
     }
 
     // Update is called once per frame
