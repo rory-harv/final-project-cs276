@@ -20,11 +20,11 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        level1Button.clicked += Level1Scene;
+        level1Button.clicked += Level1Scene;    // checks if level 1 button pressed
     }
 
-    public void Level1Scene()
+    void Level1Scene()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Game"); // reloads scene from starter to level 1
     }
 }

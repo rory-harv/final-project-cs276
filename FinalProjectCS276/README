@@ -1,3 +1,11 @@
-This is a game of Memory Match! The goal of the mini-game is to turn over two cards at a time that are matches. Each set of cards you turn over decreases your “Turns Left” by one, so be careful of how many non-matches you turn over. Completing the mini-game within the number of maximum turns will allow for you to gain more friendship with the owner of the jewelry stand!
+Project Title & Description:
+Friendship Market - This is an RPG game that follows you, a small business owner who spends their Sundays at Friendship Market! You can make friends with other vendors at the market, and complete mini-games to earn their friendship. Over time, with friendship achievements, you are able to customize your character, customize your vendor stand, and unlock more quests and mini-games!
 
-To turn over a card, simply click on the back of the card! The front of the card will be revealed after it is clicked on. Then, click over your second card, and if it is a match, they will both disappear from the screen! If the level is failed, click on the restart button and try again.
+How to Install and Play:
+Play the game by clicking on the link to Unity Play, where the game is published online, free! 
+When the game opens, you will be taken to the Jewelry stand, where the owner needs help sorting her cards. When you click on Level 1, it will take you to the mini-game, where 10 cards are flipped with the backside facing. The game is like “Memory Match”, where you click on two cards at a time to flip them over; if they are a matching pair, they disappear. The goal of the game is to match all the cards into their rightful pairs, and do so within the limited number of turns you have. 
+
+Controls:
+When playing, all interactions with the game will be through mouse clicks, no keyboard usage required. Within the game, to start the level, click the “Level 1” button. While playing, use your mouse to click cards over. When two cards are clicked and facing upwards, the game will determine if they are a match, and either turn the cards back over (not a match), or have them disappear off the screen (match). You are able to click the “Restart” button and replay the level as many times as you would like. 
+
+Have fun!

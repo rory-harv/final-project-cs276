@@ -53,7 +53,7 @@ public class Card_Backside : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        turns = 7;
+        turns = 8;
 
         turnsText = uiDocument.rootVisualElement.Q<Label>("TurnsLabel");
         matchText = uiDocument.rootVisualElement.Q<Label>("MatchLabel");
