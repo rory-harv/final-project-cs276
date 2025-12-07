@@ -49,9 +49,6 @@ public class Card_Backside : MonoBehaviour
 
     private bool completed = false;
 
-    public AudioSource audioSource; 
-    public AudioClip soundClip1;
-    public AudioClip soundClip2;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -75,7 +72,6 @@ public class Card_Backside : MonoBehaviour
             card.GetComponent<SpriteRenderer>().enabled = true;     // sets all card fronts active
         }
 
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -218,7 +214,6 @@ public class Card_Backside : MonoBehaviour
     public void ShowMatchText()
     {
         matchText.style.display = DisplayStyle.Flex;    // displays match text
-        audioSource.PlayOneShot(soundClip1);
     }
 
     public void HideMatchText()
@@ -229,7 +224,6 @@ public class Card_Backside : MonoBehaviour
     public void ShowNonMatchText()
     {
         nonMatchText.style.display = DisplayStyle.Flex;    // displays nonmatch text
-        audioSource.PlayOneShot(soundClip2);
     }
     public void HideNonMatchText()
     {

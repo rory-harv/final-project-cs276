@@ -319,9 +319,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &200738238
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,9 +515,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &244281695
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,175 +711,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
---- !u!1 &322183906
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 322183909}
-  - component: {fileID: 322183908}
-  - component: {fileID: 322183907}
-  m_Layer: 0
-  m_Name: MatchSound
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &322183907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322183906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a52684325002ab54eaddd1f38d4ff355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiDocument: {fileID: 121819526}
-  Card1_Prefab: {fileID: 200738238}
-  Card2_Prefab: {fileID: 1882583051}
-  Card3_Prefab: {fileID: 1065154229}
-  Card4_Prefab: {fileID: 418032995}
-  Card5_Prefab: {fileID: 441276983}
-  Card6_Prefab: {fileID: 1076751133}
-  Card7_Prefab: {fileID: 244281695}
-  Card8_Prefab: {fileID: 1081986469}
-  Card9_Prefab: {fileID: 1677001060}
-  Card10_Prefab: {fileID: 1774819571}
-  Card1_Front: {fileID: 1676742528}
-  Card2_Front: {fileID: 1962480623}
-  Card3_Front: {fileID: 355431989}
-  Card4_Front: {fileID: 1564116345}
-  Card5_Front: {fileID: 1565151017}
-  Card6_Front: {fileID: 195462922}
-  Card7_Front: {fileID: 1285112027}
-  Card8_Front: {fileID: 1364256106}
-  Card9_Front: {fileID: 821778877}
-  Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
---- !u!82 &322183908
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322183906}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.3
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &322183909
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 322183906}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.15528715, y: 0.46245205, z: 0.052024066}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &355431989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,9 +860,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &418032995
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,9 +1056,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &441276983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,9 +1252,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &463627239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,9 +1538,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &821778877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,138 +1687,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
---- !u!1 &823322288
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 823322290}
-  - component: {fileID: 823322289}
-  m_Layer: 0
-  m_Name: BackgroundMusic
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &823322289
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 823322288}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: bea93a38b71b64b598109b3a3b1a0048, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.2
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &823322290
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 823322288}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.15528715, y: 0.46245205, z: 0.052024066}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &850462081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2289,9 +1970,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &1076751133
 GameObject:
   m_ObjectHideFlags: 0
@@ -2488,9 +2166,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &1081986469
 GameObject:
   m_ObjectHideFlags: 0
@@ -2687,9 +2362,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &1285112027
 GameObject:
   m_ObjectHideFlags: 0
@@ -2839,9 +2511,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &1356930210
 GameObject:
   m_ObjectHideFlags: 0
@@ -3032,9 +2701,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &1564116345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3184,9 +2850,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &1565151017
 GameObject:
   m_ObjectHideFlags: 0
@@ -3336,9 +2999,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &1676742528
 GameObject:
   m_ObjectHideFlags: 0
@@ -3488,9 +3148,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &1677001060
 GameObject:
   m_ObjectHideFlags: 0
@@ -3687,9 +3344,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &1774819571
 GameObject:
   m_ObjectHideFlags: 0
@@ -3886,9 +3540,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &1882583051
 GameObject:
   m_ObjectHideFlags: 0
@@ -4085,9 +3736,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1 &1922618968
 GameObject:
   m_ObjectHideFlags: 0
@@ -4278,9 +3926,6 @@ MonoBehaviour:
   Card8_Front: {fileID: 1364256106}
   Card9_Front: {fileID: 821778877}
   Card10_Front: {fileID: 708469377}
-  audioSource: {fileID: 322183908}
-  soundClip1: {fileID: 8300000, guid: fcd8d7bb27bb749c3b865f20df846790, type: 3}
-  soundClip2: {fileID: 8300000, guid: 820931fb511624737beb248c33a8b77e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4290,5 +3935,3 @@ SceneRoots:
   - {fileID: 1356930211}
   - {fileID: 121819527}
   - {fileID: 850462083}
-  - {fileID: 823322290}
-  - {fileID: 322183909}
